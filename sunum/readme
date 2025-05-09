@@ -1,1 +1,32 @@
 
+---
+title: Use Case Diyagramı
+---
+
+```mermaid
+%%{init: { "theme": "base", "themeVariables": { "actorStroke": "#4A5568", "actorTextColor": "#2D3748", "primaryColor": "#63B3ED", "primaryTextColor": "#1A202C" }}}%%
+%% usecase
+actor Teacher as "Öğretmen/Ebeveyn"
+actor Student as "Öğrenci"
+actor Admin   as "Sistem Yöneticisi"
+
+Teacher --> (Soru Oluştur)
+Teacher --> (Soru Düzenle)
+Teacher --> (Soru Sil)
+Teacher --> (Kategori Yönetimi)
+Teacher --> (Öğrenci Grubu Oluştur)
+
+Admin   --> (Kullanıcı Ekle/Düzenle)
+Admin   --> (Rol Yönetimi)
+
+Student --> (Oturum Aç)
+Student --> (Soru Görüntüle)
+Student --> (Soru Yanıtla)
+
+Teacher --> (Performans Raporu Görüntüle)
+Admin   --> (Performans Raporu Görüntüle)
+Admin   --> (Sistem Loglarını İzle)
+
+(Soru Oluştur)           ..> (Kategori Yönetimi)          : «include»
+(Soru Yanıtla)           ..> (Oturum Aç)                  : «include»
+(Performans Raporu Görüntüle) ..> (Soru Yanıtla)           : «extends»
