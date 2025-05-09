@@ -1,7 +1,4 @@
 
----
-title: Use Case Diyagramı
----
 
 ```mermaid
 %%{init: { "theme": "base", "themeVariables": { "actorStroke": "#4A5568", "actorTextColor": "#2D3748", "primaryColor": "#63B3ED", "primaryTextColor": "#1A202C" }}}%%
